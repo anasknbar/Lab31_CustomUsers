@@ -1,0 +1,11 @@
+<!-- myapp/templates/myapp/mymodel_form.html -->
+{% extends "flights/base.html" %}
+
+{% block body %}
+  <h1>Add New Air Port</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}
