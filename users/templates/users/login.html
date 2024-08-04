@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    a{
+      padding: 5px;
+      text-decoration: none;
+      color: black;
+    }
+
+    a:hover{
+      border-bottom: 2px solid black;
+      color: rgb(124, 98, 98);
+    }
+  </style>
+<body>
+    {% if message %}
+<div>{{ message }}</div>
+{% endif %}
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" id="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" value="Login">
+</form>
+<h3>Have no account <a style="color:blue" href="{% url 'signup' %}">sign-up</a></h3> 
+</body>
+</html>
+
+

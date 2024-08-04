@@ -1,0 +1,28 @@
+{% extends 'users/auth_base.html'%}
+
+{% block body %}
+
+<header>
+  <nav>
+
+    <a href="{% url 'all_flights' %}">Flights</a>
+    <a href="{% url 'add_airport' %}">add airport</a>
+    <a href="{% url 'add_flight' %}">add flight</a>
+    <a href="{% url 'add_passenger' %}">add passenger</a>
+    <a href="{% url 'index' %}">profile</a>
+    <a href="{% url 'logout' %}"> Log Out</a>
+
+
+  </nav>
+</header>
+
+<h1>Hi {{request.user.username}}</h1>
+<ul>
+  <li>Username: {{request.user.username}}</li>
+  <li>Email: {{request.user.email}}</li>
+</ul>
+
+
+
+
+{% endblock %}

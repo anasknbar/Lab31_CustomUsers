@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flights APP</title>
+
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    a{
+      padding: 5px;
+      text-decoration: none;
+      color: black;
+    }
+
+    a:hover{
+      border-bottom: 2px solid black;
+      color: rgb(124, 98, 98);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="{% url 'all_flights' %}">Flights</a>
+      <a href="{% url 'add_airport' %}">add airport</a>
+      <a href="{% url 'add_flight' %}">add flight</a>
+      <a href="{% url 'add_passenger' %}">add passenger</a>
+      <a href="{% url 'index' %}">profile</a>
+
+      <a href="{% url 'logout' %}"> Log Out</a>
+
+      
+    </nav>
+
+  </header>
+  {% block body %}
+  {% endblock %}
+</body>
+</html>
